@@ -5,6 +5,19 @@ div.container {
   margin: auto;
   box-sizing: border-box;
   padding: 8px;
+text-align: center;
+font-size: 30px;
 
+}
 
+input.number {
+width: 80%;
+background-color: #D291BC;
+padding: 8px 16px 8px 16px;
+box-sizing: border-box;
+border-radius: 8px;
+border: 2px solid;
+height: 95px;
+font-size: 40px;
+text-align: center
 }
