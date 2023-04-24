@@ -94,10 +94,42 @@ class App4 extends React.Component {
   }
 }
 
+const App5 = (props) => {
+  const [loading, setLoading] =
+   useState(true);
+   const [clicks, setClicks] =
+   useState(0);
 
+   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 3000);
+   }, []);
+
+   if(loading) {
+return <p>Loading Component...
+  Please Wait
+</p>
+   }
+
+   const addClicks = () => {
+    setClicks(clicks +1)
+   }
+
+return (
+  <div className="container">
+    <h1>React Early Return Rendering</h1>
+    <p>I have been clicked {clicks} times</p>
+  <button
+  value={clicks}
+  onClick={addClicks}
+  >+1</button>
+  </div>
+)
+}
 
 ReactDOM.render(
-<App4
+<App5
 />,
 document.getElementById("root")
 )
