@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import TextInput from "./elements.js"
+
 
 
 const App1 = () => {
@@ -56,8 +58,46 @@ return (
   </div>
 )
 }
+
+class App4 extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      entry: "",
+      error: "This must not be empty"
+    }
+  }
+
+  updateInput = (event) => {
+    let error = null;
+    if (event.target.value.length == 0) {
+      error = "This must not be empty"
+    }
+
+    this.setState({
+      entry: event.target.value,
+      error: error,
+    });
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <h1>Travel GO Application Form</h1>
+        <TextInput 
+        value={this.state.entry}
+        onChange={this.updateInput}
+        error={this.state.error}
+        />
+      </div>
+    )
+  }
+}
+
+
+
 ReactDOM.render(
-<App3
+<App4
 />,
 document.getElementById("root")
 )
