@@ -127,9 +127,31 @@ return (
   </div>
 )
 }
+const App6 = (props) => {
+  const [averageTemp, setAverageTemp] =
+  useState(26);
+  let prediction;
+
+  if (props.currentTemp > averageTemp) {
+prediction = "a little warmer than";
+  } else if (props.currentTemp < averageTemp) {
+prediction = "a little colder than";
+  } else {
+    prediction = "the same as";
+  }
+  
+  return (
+    <div className="container">
+      <h2>Weather Predictor</h2>
+<p>It will be {prediction} expected </p>      
+    </div>
+  )
+}
 
 ReactDOM.render(
-<App5
+<App6
+currentTemp="22"
+currentTemp="30"
 />,
 document.getElementById("root")
 )
