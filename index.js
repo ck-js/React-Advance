@@ -148,10 +148,30 @@ prediction = "a little colder than";
   )
 }
 
+const App7 = (props) => {
+  const [loggedIn, setLoggedIn] =
+  useState(false);
+  const [username, setUsername] =
+  useState(null);
+
+  
+
+  if (!loggedIn) {
+return <p>You are not logged in,
+  log in first
+</p>
+  }
+
+  return (
+    <div className="container">
+      <h3>Welcome {username}</h3>
+
+    </div>
+  )
+} 
+
 ReactDOM.render(
-<App6
-currentTemp="22"
-currentTemp="30"
+<App7
 />,
 document.getElementById("root")
 )
