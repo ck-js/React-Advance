@@ -13,6 +13,8 @@ const App1 = () => {
   )
 }
 
+// conditional rendering
+
 const App2 = () => {
   const number = 99;
 
@@ -170,13 +172,15 @@ return <p>You are not logged in,
   )
 } 
 
-const App8 = () => {
-const [open, setOpen] = useState(true);
+const App8 = (props) => {
+const [open, setOpen] = useState(false);
 const [itemCount, setItemCount] = 
 useState(23);
 let sign;
+
+
 if (!open) {
-sign = <p>Sorry, we're closed today</p>
+sign = <p>Sorry, we are closed today</p>
 }   else if (itemCount === 0) {
   sign = <p>This item is out of stock</p>
 } else {
@@ -196,9 +200,32 @@ return (
 )
 }
 
+// early return component example
+
+const App9 = (props) => {
+if (props.src === null) {
+  return <p>No image available</p>
+}
+return <img src={props.src} /> 
+}
+
+// ternary operators && 
+
+const App10 = () => {
+  let number = 28;
+
+  const print = (number % 2 == 1)
+  ? "This is an odd number"
+  : "This is an even number"
+
+  return <p className="container">{number} {print}</p>
+}
+
 
 ReactDOM.render(
-<App8
+<App10
+
+
 />,
 document.getElementById("root")
 )
