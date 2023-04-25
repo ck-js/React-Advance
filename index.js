@@ -221,10 +221,24 @@ const App10 = () => {
   return <p className="container">{number} {print}</p>
 }
 
+const App11 = (props) => {
+  const number = props.number;
+
+  return (
+    <div className="container">
+      <h3>{number}</h3>
+      {
+        (number % 2 == 1)
+        ? <p>This is an odd number</p>
+        : <p>This is an even number</p>
+      }
+    </div>
+  )
+}
 
 ReactDOM.render(
-<App10
-
+<App11
+number=""
 
 />,
 document.getElementById("root")
