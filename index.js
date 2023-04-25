@@ -170,8 +170,35 @@ return <p>You are not logged in,
   )
 } 
 
+const App8 = () => {
+const [open, setOpen] = useState(true);
+const [itemCount, setItemCount] = 
+useState(23);
+let sign;
+if (!open) {
+sign = <p>Sorry, we're closed today</p>
+}   else if (itemCount === 0) {
+  sign = <p>This item is out of stock</p>
+} else {
+  sign = <p>We have {itemCount} of that item</p>
+}
+
+return (
+  <div className="container">
+    <h1>Shopify</h1>
+    <p>
+      <i>
+        <u>Item:</u>Choco Cookies
+      </i>
+    </p>
+  {sign}
+  </div>
+)
+}
+
+
 ReactDOM.render(
-<App7
+<App8
 />,
 document.getElementById("root")
 )
