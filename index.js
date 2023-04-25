@@ -236,9 +236,19 @@ const App11 = (props) => {
   )
 }
 
+const App12 = (props) => {
+return (
+  <div className="container">
+    {
+      props.loggedIn &&
+<p>Login Successful</p>
+    }
+  </div>
+)
+}
 ReactDOM.render(
-<App11
-number=""
+<App12
+loggedIn={true}
 
 />,
 document.getElementById("root")
