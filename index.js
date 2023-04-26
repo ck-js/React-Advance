@@ -246,9 +246,44 @@ return (
   </div>
 )
 }
+
+const App13 = () => {
+  const [clicked, setClicked] = 
+  useState(false);
+
+  const clickFunction = () => {
+    setClicked(true)
+  }
+
+  return (
+    <div className="container">
+      <h1>Click Counter</h1>
+      <button
+      onClick={clickFunction}
+      >Display Message</button>
+    {
+      clicked && 
+      <p> You should now see this message</p>
+    }
+    </div>
+  )
+
+}
+
+const App14 = (props) => {
+  const screen = (props.page === "about")
+  ? <h3>About Orange Tang Co</h3>
+  : <h3>Page not found</h3>
+
+  return (
+    <div className="container">
+      {screen}
+    </div>
+  )
+}
 ReactDOM.render(
-<App12
-loggedIn={true}
+<App14
+page="home"
 
 />,
 document.getElementById("root")
